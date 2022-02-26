@@ -13,3 +13,5 @@ Y esta API tiene los siguientes EndPoints de consulta:
 
 Considerando esta API y sus recursos, selecciona 3 de estos recursos y diseñar los casos de prueba funcionales que veas adecuados y luego
 automatiza al menos 6 casos de prueba distintos (debe ser en Postman)
+
+Test Escenarios
