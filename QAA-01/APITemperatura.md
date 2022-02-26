@@ -27,4 +27,6 @@ Scenarios
 | --- | --- | --- | --- |
 | FALSE | FALSE | FALSE |  |
 
-- [ ]
+- []
+- [X]
+- [x] 
