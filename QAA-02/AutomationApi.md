@@ -21,7 +21,7 @@ automatiza al menos 6 casos de prueba distintos (debe ser en Postman)
 | https://jsonplaceholder.typicode.com/posts/:id | GET | Obtener un Post por el ID |
 | https://jsonplaceholder.typicode.com/posts/:id/comments | GET | Obtener todos los comentarios de un Post por el ID |
 
-## Test cases
+## Test cases 1
 | Ruta | Verbo http | Descripcion |
 | --- | --- | --- |
 | https://jsonplaceholder.typicode.com/posts | GET | Obtener 100 Posts |
@@ -30,4 +30,15 @@ automatiza al menos 6 casos de prueba distintos (debe ser en Postman)
 | --- | --- |
 | 1 | API responde con 200 |
 | 2 | Retorna 100 resultados (100 posts) |
+| 3 | Formato del JSON es valido |
+
+## Test cases 2
+| Ruta | Verbo http | Descripcion |
+| --- | --- | --- |
+| https://jsonplaceholder.typicode.com/posts | POST | Creacion de un resource |
+
+| # | Scenario |
+| --- | --- |
+| 1 | API responde con 200 |
+| 2 | Retorna un JSON |
 | 3 | Formato del JSON es valido |
