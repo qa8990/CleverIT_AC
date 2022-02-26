@@ -25,5 +25,6 @@ Scenarios
 
 | Fecha | Country | City | Result Ok |
 | --- | --- | --- | --- |
-| FALSE | FALSE | FALSE | - [ ] |
+| FALSE | FALSE | FALSE |  |
 
+- [ ]
