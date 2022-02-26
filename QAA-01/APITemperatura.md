@@ -23,6 +23,7 @@ Scenarios
 | 7 | Buscar valores de temperatura para Fecha y Country Validos, City No validos |
 | 8 | Buscar valores de temperatura para Fecha, City y Country validos |
 
+Tabla de escenarios
 | Fecha | Country | City | Result Ok |
 | --- | --- | --- | --- |
 | FALSE | FALSE | FALSE | :x: |
