@@ -13,7 +13,7 @@
 Scenarios
 
 | # | Scenario |
-| --- | --- |
+
 | 1 | Buscar valores de temperatura para Fecha, Country y City validos |
 | 2 | Buscar valores de temperatura para Fecha, Country y City No validos |
 | 3 | Buscar valores de temperatura para Fecha, Country y City vacios |
@@ -24,5 +24,4 @@ Scenarios
 | 8 | Buscar valores de temperatura para Fecha y Country No valida,  y City validos |
 
 | Fecha | Country | City | Result Ok |
-| --- | --- | --- | --- | --- |
-| FALSE | False | FALSE | [] |
+| --- | --- |
