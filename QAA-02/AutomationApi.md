@@ -20,3 +20,8 @@ automatiza al menos 6 casos de prueba distintos (debe ser en Postman)
 | https://jsonplaceholder.typicode.com/posts | GET | Obtener 100 Posts |
 | https://jsonplaceholder.typicode.com/posts/:id | GET | Obtener un Post por el ID |
 | https://jsonplaceholder.typicode.com/posts/:id/comments | GET | Obtener todos los comentarios de un Post por el ID |
+
+## Test cases
+| Ruta | Verbo http | Descripcion |
+| --- | --- | --- |
+| https://jsonplaceholder.typicode.com/posts | GET | Obtener 100 Posts |
