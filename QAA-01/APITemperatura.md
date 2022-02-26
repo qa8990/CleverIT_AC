@@ -1,6 +1,6 @@
 ## Ejercicio 1 (QAA-01) API Temperatura
 
-#Descripción:
+# Descripción:
 
 Crear los casos de prueba posibles para testear el siguiente microservicio GET, que recibe:
 En el request la fecha del día actual en formato DD-MM-AAAA.
