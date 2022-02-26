@@ -25,7 +25,7 @@
 
 ## Tabla de escenarios
 
-| Fecha | Country | City | Status Ok | Status Ok |
+| Fecha | Country | City | Status Ok |
 | --- | --- | --- | --- |
 | FALSE | FALSE | FALSE | :x: |
 | FALSE | FALSE | TRUE | :x: |
