@@ -14,14 +14,14 @@ Scenarios
 
 | # | Scenario |
 | --- | --- |
-| 1 | Buscar valores de temperatura para Fecha, Country y City validos |
-| 2 | Buscar valores de temperatura para Fecha, Country y City No validos |
-| 3 | Buscar valores de temperatura para Fecha, Country y City vacios |
-| 4 | Buscar valores de temperatura para Fecha valida, Country y City No validos |
-| 5 | Buscar valores de temperatura para Fecha y Country validos y City No validos |
-| 6 | Buscar valores de temperatura para Fecha No valida, Country y City validos |
-| 7 | Buscar valores de temperatura para Fecha y Country No valida,  y City validos |
-| 8 | Buscar valores de temperatura para Fecha y Country No valida,  y City validos |
+| 1 | Buscar valores de temperatura para Fecha, Country y City No validos |
+| 2 | Buscar valores de temperatura para Fecha, Country No validos y City validos |
+| 3 | Buscar valores de temperatura para Fecha y City No Validos, Country validos |
+| 4 | Buscar valores de temperatura para Fecha No valida, Country y City validos |
+| 5 | Buscar valores de temperatura para Fecha Valida y Country y City No validos |
+| 6 | Buscar valores de temperatura para Fecha y City Validos, Country No validos |
+| 7 | Buscar valores de temperatura para Fecha y Country Validos, City No validos |
+| 8 | Buscar valores de temperatura para Fecha, City y Country validos |
 
 | Fecha | Country | City | Result Ok |
 | --- | --- | --- | --- |
