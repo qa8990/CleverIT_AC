@@ -1,0 +1,651 @@
+{
+	"info": {
+		"_postman_id": "4a2e038e-6b92-41f1-acb1-64d20d9a4768",
+		"name": "CleverIT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "QAA-01",
+			"item": [
+				{
+					"name": "Temperatura",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Country",
+								"value": "None",
+								"description": "Pais",
+								"type": "text"
+							},
+							{
+								"key": "City",
+								"value": "None",
+								"description": "Ciudad",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n        \"temperaturaActual\":\"37\",\r\n        \"temperaturaDiaSiguiente\": \"29\"\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://my.api.mockaroo.com/Temperatura?key=67416a50",
+							"protocol": "https",
+							"host": [
+								"my",
+								"api",
+								"mockaroo",
+								"com"
+							],
+							"path": [
+								"Temperatura"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "67416a50"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QAA-02",
+			"item": [
+				{
+					"name": "Listing all resources",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Escenarios de Prueba\r",
+									"var jsonData = pm.response.json();\r",
+									"let schema = {\r",
+									"    \"type\": \"array\",\r",
+									"    \"data\": {\r",
+									"        \"properties\": {\r",
+									"            \"userId\": {\r",
+									"                \"type\": \"string\"\r",
+									"            },\r",
+									"            \"id\": {\r",
+									"                \"type\": \"string\"\r",
+									"            },\r",
+									"            \"title\": {\r",
+									"                \"type\": \"string\"\r",
+									"            },\r",
+									"            \"body\": {\r",
+									"                \"type\": \"string\"\r",
+									"            }\r",
+									"        }\r",
+									"    },\r",
+									"    \"required\": [\r",
+									"        \"userId\",\r",
+									"        \"id\",\r",
+									"        \"title\",\r",
+									"        \"body\"\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"// Verificando si devuelve 200\r",
+									"pm.test('API responde con 200', function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"})\r",
+									"\r",
+									"// Verificando la cantidad de posts\r",
+									"pm.test(\"Retorna 100 resultados (100 posts)\", function () {\r",
+									"    console.log(jsonData.length);\r",
+									"    pm.expect(jsonData.length).to.eql(100);\r",
+									"});\r",
+									"\r",
+									"// Verificando el JSON\r",
+									"pm.test(\"Formato del JSON\", function(){\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Formato del JSON body\", function(){\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtering a comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing  all resource comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments?postId={{postId}}",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "{{postId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a resource",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Escenarios de Pruebas para la creacion de un resource\r",
+									"// Escenarios de Prueba\r",
+									"var jsonData = pm.response.json();\r",
+									"let schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"data\": {\r",
+									"        \"properties\": {\r",
+									"            \"id\": {\r",
+									"                \"type\": \"string\"\r",
+									"            }\r",
+									"        }\r",
+									"    },\r",
+									"    \"required\": [\r",
+									"        \"id\"\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"// Verificando si devuelve 201\r",
+									"pm.test('API responde con 201', function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"})\r",
+									"\r",
+									"// Verificando el JSON\r",
+									"pm.test(\"Creacion (POST) existosa\", function(){\r",
+									"    //pm.response.to.be.oneOf([201,202])\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Formato del JSON body\", function(){\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"})\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "1",
+									"description": "Titulo del resource",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "1",
+									"description": "Cuerpo del Resource",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"description": "User Id",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting a resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{userId}}",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting a resource comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{postId}}/comments",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"{{postId}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting album photos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/albums/{{albumId}}/photos",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"albums",
+								"{{albumId}}",
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting user albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/{{userId}}/albums",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/albums",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting user todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/1/todos",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"1",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting user posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/{{userId}}/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updating a resource",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "{{postId}}",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "New Title",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "New body",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{postId}}",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"{{postId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patching a resource",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New Title foo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{postId}}",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"{{postId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleting a resource",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{postId}}",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"{{postId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtering a resource",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "{{postId}}",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "New Title",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "New body",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/?userId={{userId}}",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								""
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{userId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing a nested resource",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{postId}}/comments",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"{{postId}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
