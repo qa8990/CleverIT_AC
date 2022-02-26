@@ -25,8 +25,14 @@ Scenarios
 
 | Fecha | Country | City | Result Ok |
 | --- | --- | --- | --- |
-| FALSE | FALSE | FALSE |  |
+| FALSE | FALSE | FALSE | :x: |
+| FALSE | FALSE | TRUE | :x: |
+| FALSE | TRUE | FALSE | :x: |
+| FALSE | TRUE | TRUE | :x: |
+| TRUE | FALSE | FALSE | :x: |
+| TRUE | FALSE | TRUE | :x: |
+| TRUE | TRUE | FALSE | :x: |
+| TRUE | TRUE | TRUE | :heavy_check_mark: |
 
-- [ ] foo
-- [X]
-- [x] 
+
+
