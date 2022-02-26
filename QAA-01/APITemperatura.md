@@ -10,7 +10,7 @@
 - Considera que cuando es un País distinto a los señalados o una ciudad distinta el response "País y Ciudad incorrectos", y que todos los campos a ingresar son Sensitive Case.
 - El response del microservicio devuelve la temperaturaActual y temperaturaDiaSiguiente en formato json.
 
-Scenarios
+## Scenarios
 
 | # | Scenario |
 | --- | --- |
@@ -23,7 +23,7 @@ Scenarios
 | 7 | Buscar valores de temperatura para Fecha y Country Validos, City No validos |
 | 8 | Buscar valores de temperatura para Fecha, City y Country validos |
 
-Tabla de escenarios
+## Tabla de escenarios
 | Fecha | Country | City | Result Ok |
 | --- | --- | --- | --- |
 | FALSE | FALSE | FALSE | :x: |
