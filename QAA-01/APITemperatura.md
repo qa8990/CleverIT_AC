@@ -24,4 +24,5 @@ Scenarios
 | 8 | Buscar valores de temperatura para Fecha y Country No valida,  y City validos |
 
 | Fecha | Country | City | Result Ok |
-| --- | --- |
+| --- | --- | --- | --- |
+
