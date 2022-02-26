@@ -1,5 +1,7 @@
-Ejercicio 1 (QAA-01) API Temperatura
-Descripción:
+## Ejercicio 1 (QAA-01) API Temperatura
+
+#Descripción:
+
 Crear los casos de prueba posibles para testear el siguiente microservicio GET, que recibe:
 En el request la fecha del día actual en formato DD-MM-AAAA.
 Dos headers, el primero es "Country", cuyo dominio de valores puede ser "Chile" o "Argentina" y el segundo es "City", cuyo dominio de
