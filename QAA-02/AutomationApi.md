@@ -15,5 +15,5 @@ Considerando esta API y sus recursos, selecciona 3 de estos recursos y diseñar 
 automatiza al menos 6 casos de prueba distintos (debe ser en Postman)
 
 ## Test Escenarios
-| Command | Description |
-| --- | --- |
+| Ruta | Verbo http | Descripcion |
+| --- | --- | --- |
