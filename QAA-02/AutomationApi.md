@@ -25,3 +25,9 @@ automatiza al menos 6 casos de prueba distintos (debe ser en Postman)
 | Ruta | Verbo http | Descripcion |
 | --- | --- | --- |
 | https://jsonplaceholder.typicode.com/posts | GET | Obtener 100 Posts |
+
+| # | Scenario |
+| --- | --- |
+| 1 | API responde con 200 |
+| 2 | Retorna 100 resultados (100 posts) |
+| 3 | Formato del JSON es valido |
