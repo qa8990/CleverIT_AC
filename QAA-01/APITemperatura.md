@@ -24,7 +24,7 @@
 | 8 | Buscar valores de temperatura para Fecha, City y Country validos |
 
 ## Tabla de escenarios
-| Fecha | Country | City | Result Ok |
+| Fecha | Country | City | Status Ok | Status Ok |
 | --- | --- | --- | --- |
 | FALSE | FALSE | FALSE | :x: |
 | FALSE | FALSE | TRUE | :x: |
